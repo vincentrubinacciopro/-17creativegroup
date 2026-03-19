@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Clean URL redirect handler for GitHub Pages
+  var path = window.location.pathname;
+  var search = window.location.search;
+  var hash = window.location.hash;
+  if(path.slice(-1) !== '/') path = path + '/';
+  window.location.replace('https://17creativegroup.com' + path + 'index.html' + search + hash);
+</script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,10 @@
+title: 17 Creative Group
+description: Emmy Award-Winning Video Production & Marketing Agency
+url: "https://17creativegroup.com"
+permalink: pretty
+include:
+  - _pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://17creativegroup.com/sitemap.xml
