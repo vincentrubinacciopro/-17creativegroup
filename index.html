@@ -652,6 +652,33 @@ a{text-decoration:none;color:inherit}
   .carousel-thumbs { display: none !important; }
   .carousel-nav { display: none !important; }
   .carousel-counter { display: none !important; }
+  /* Stats below header - 2x2 centered grid on mobile */
+  .stats {
+    grid-template-columns: 1fr 1fr !important;
+    text-align: center !important;
+  }
+  .stat {
+    padding: 20px 12px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(240,237,232,0.1) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .stat-n {
+    font-size: 36px !important;
+    text-align: center !important;
+    display: block !important;
+  }
+  .stat-l {
+    font-size: 9px !important;
+    text-align: center !important;
+    display: block !important;
+    letter-spacing: 0.1em !important;
+  }
+
 }
 </style>
 </head>
@@ -1359,6 +1386,20 @@ function submitForm(e) {
     window.addEventListener('load', function(){ setTimeout(initAutoplay, 500); });
   }
 })();
+</script>
+
+<script>
+// Mobile only: add background=1 to carousel thumbnails to hide Vimeo UI
+if(window.innerWidth <= 480){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
+      var src = el.getAttribute('src') || '';
+      if(src && src.indexOf('background=1') === -1){
+        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
+      }
+    });
+  });
+}
 </script>
 </body>
 </html>
