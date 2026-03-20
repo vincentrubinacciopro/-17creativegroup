@@ -1173,5 +1173,19 @@ function submitForm(e){
 <p>We also serve the greater Austin Texas area including Austin | Round Rock | Cedar Park | Pflugerville | Georgetown | Leander | Kyle | Buda | San Marcos | New Braunfels | Hutto | Taylor | Liberty Hill | Marble Falls | Burnet | Bastrop | Elgin | Lockhart | Seguin | Schertz | Cibolo | Universal City | Converse | Live Oak | Selma | Garden Ridge | Boerne | Dripping Springs | Wimberley | Lakeway | Bee Cave | West Lake Hills | Rollingwood | Sunset Valley | Manor | Del Valle | Manchaca | Driftwood | Spicewood | Jonestown | Lago Vista | Volente | Brushy Creek | Wells Branch | Steiner Ranch | River Place | Anderson Mill | Jollyville | Mueller | East Austin | South Austin | North Austin | Domain | Barton Creek | Circle C Ranch | South Congress | Rainey Street | Zilker | Travis Heights | San Antonio | Kerrville | Fredericksburg | Johnson City | Blanco | Luling | Gonzales | Cuero | Victoria | Waco | Temple | Killeen | Harker Heights | Belton | Salado | Llano | Mason | Brady | Lampasas | Copperas Cove | Gatesville | Hillsboro | Corsicana | Waxahachie | Ennis | Midlothian | Mansfield | Arlington | Grand Prairie | Irving | Dallas | Fort Worth | Denton | McKinney | Frisco | Plano | Allen | Richardson.</p>
 <p>Emmy Award-winning video production, wedding videography, sports content, brand commercials, and digital marketing services available throughout New England and Texas.</p>
 </div>
+
+<script>
+// Mobile only: add background=1 to carousel thumbnails to hide Vimeo UI
+if(window.innerWidth <= 480){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
+      var src = el.getAttribute('src') || '';
+      if(src && src.indexOf('background=1') === -1){
+        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
+      }
+    });
+  });
+}
+</script>
 </body>
 </html>
