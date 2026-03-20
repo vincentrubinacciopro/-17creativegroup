@@ -645,6 +645,15 @@ a{text-decoration:none;color:inherit}
 
 .skills-section{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;clip:rect(0,0,0,0)!important}
 </style>
+
+<style>
+@media(max-width:480px){
+  /* Hide carousel thumbnails - show one video only */
+  .carousel-thumbs { display: none !important; }
+  .carousel-nav { display: none !important; }
+  .carousel-counter { display: none !important; }
+}
+</style>
 </head>
 <body>
 
@@ -988,7 +997,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Email</div>
-          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank">17creativegroup@gmail.com</a>
+          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank"><span class="__cf_email__" data-cfemail="68595f0b1a0d091c011e0d0f1a071d18280f05090104460b0705">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Portfolio</div>
@@ -1143,7 +1152,7 @@ a{text-decoration:none;color:inherit}
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
 window.addEventListener('scroll',()=>{
   const cue=document.getElementById('scrollCue');
@@ -1334,12 +1343,3 @@ function submitForm(e) {
     });
   }
   
-  if(document.readyState === 'complete'){
-    setTimeout(initAutoplay, 500);
-  } else {
-    window.addEventListener('load', function(){ setTimeout(initAutoplay, 500); });
-  }
-})();
-</script>
-</body>
-</html>
