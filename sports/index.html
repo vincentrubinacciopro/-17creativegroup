@@ -648,5 +648,19 @@ a{text-decoration:none;color:inherit}
   }
 })();
 </script>
+
+<script>
+// Mobile only: add background=1 to carousel thumbnails to hide Vimeo UI
+if(window.innerWidth <= 480){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
+      var src = el.getAttribute('src') || '';
+      if(src && src.indexOf('background=1') === -1){
+        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
+      }
+    });
+  });
+}
+</script>
 </body>
 </html>
