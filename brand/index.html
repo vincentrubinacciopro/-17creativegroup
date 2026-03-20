@@ -821,42 +821,15 @@ footer a:hover{color:var(--gold)}
   }
 }
 
-/* Package desktop text wrap + left-align fix */
-.comm-pkg-grid > div {
-  min-width: 0 !important;
-  text-align: left !important;
+/* Package 3 desktop text wrap fix */
+.comm-pkg-grid > div:last-child [style*="display:flex;gap:10px"] {
+  align-items: flex-start;
 }
-.comm-pkg-grid > div [style*="display:flex;gap:10px"] {
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  text-align: left !important;
-  min-width: 0 !important;
-  width: 100% !important;
-}
-.comm-pkg-grid > div [style*="display:flex;gap:10px"] > span[style*="flex-shrink"] {
-  flex: 0 0 auto !important;
-}
-.comm-pkg-grid > div [style*="display:flex;gap:10px"] > strong,
-.comm-pkg-grid > div [style*="display:flex;gap:10px"] > span:not([style*="flex-shrink"]) {
-  flex: 1 1 0% !important;
-  min-width: 0 !important;
-  word-break: break-word !important;
-  text-align: left !important;
-}
-.comm-pkg-grid > div [style*="display:flex;flex-direction:column"] {
-  align-items: stretch !important;
-  text-align: left !important;
-  width: 100% !important;
-}
-@media (min-width: 769px) {
-  .comm-pkg-grid > div {
-    overflow: hidden !important;
-  }
-  .comm-pkg-grid > div [style*="display:flex;gap:10px"] {
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
-  }
+.comm-pkg-grid > div:last-child [style*="display:flex;gap:10px"] > span:last-child,
+.comm-pkg-grid > div:last-child [style*="display:flex;gap:10px"] > span:not([style]) {
+  min-width: 0;
+  word-break: break-word;
+  flex: 1;
 }
 </style>
 
@@ -1015,7 +988,7 @@ footer a:hover{color:var(--gold)}
       <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:#C9A84C;line-height:1;margin-bottom:4px"><sup style="font-size:32px;vertical-align:top;margin-top:14px">$</sup>30,000</div>
       <div style="font-size:12px;color:rgba(240,237,232,0.4);margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(240,237,232,0.1)">12 videos · 1–2 shoot days · content for the full year</div>
       <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:32px">
-        <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Shoot in studio — professional white cyclorama wall</div>
+        <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0"><div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Shoot in studio — professional white cyclorama wall</div>
         <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>12 fully produced brand videos — 1–2 shoot days</div>
         
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>2+ actors included</div>
@@ -1040,7 +1013,7 @@ footer a:hover{color:var(--gold)}
 </div>
 
 <!-- EPISODIC SECTION -->
-<div style="padding:56px 64px;border-bottom:1px solid rgba(240,237,232,0.12);background:#1e2840">
+<div id="work" style="padding:56px 64px;border-bottom:1px solid rgba(240,237,232,0.12);background:#1e2840">
   <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;display:flex;align-items:center;gap:12px">Episodic Content<span style="flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,0.3),transparent)"></span></div>
   <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,56px);line-height:0.9;color:#f0ede8;margin-bottom:16px">Boost your social brand<br><em style="color:#C9A84C;font-style:normal">with episodic content.</em></div>
   <p style="font-size:15px;font-weight:300;color:rgba(240,237,232,0.65);max-width:680px;line-height:1.85;margin-bottom:32px">The brands winning on social are producing episodic series that build anticipation, grow loyal audiences, and turn followers into customers. We develop the concept, write the scripts, hire the actors, handle makeup and production design, and deliver it ready to post. You sit back — we handle the whole thing.</p>
@@ -1083,7 +1056,7 @@ footer a:hover{color:var(--gold)}
     <div style="position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;cursor:pointer;border:2px solid transparent" onclick="switchBizCarousel('prof-main','651626572','e7d4879f1a',this)">
       <iframe src="https://player.vimeo.com/video/651626572?h=e7d4879f1a&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none"></iframe>
     </div>
-    <div style="position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;cursor:pointer;border:2px solid transparent" onclick="switchBizCarousel('prof-main','207132841','',this)">
+    <div class="prof-last-thumb" style="position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;cursor:pointer;border:2px solid transparent" onclick="switchBizCarousel('prof-main','207132841','',this)">
       <iframe src="https://player.vimeo.com/video/207132841?autoplay=0&title=0&byline=0&portrait=0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none"></iframe>
     </div>
   </div>
@@ -1271,7 +1244,37 @@ function submitForm(e){
   body{overflow-x:hidden!important}
   .comm-pkg-grid{grid-template-columns:1fr!important}
   .comm-pkg-grid>div{padding:44px 24px 36px!important;box-sizing:border-box!important;width:100%!important;overflow:visible!important}
+  /* CTA banner - center button, fix padding on mobile */
+  .cta-banner { padding: 48px 20px !important; text-align: center !important; }
+  .cta-banner .btn-gold { display: inline-block !important; }
+
+  /* Hide last video in brand profile on mobile */
+  .prof-last-thumb { display: none !important; }
+
 }
 </style>
+
+<script>
+// Mobile only: add background=1 to carousel thumbnails to hide Vimeo UI
+if(window.innerWidth <= 480){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
+      var src = el.getAttribute('src') || '';
+      if(src && src.indexOf('background=1') === -1){
+        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
+      }
+    });
+  });
+}
+</script>
 </body>
-</html>
+</html
+  /* Hide See Our Work button on mobile */
+  .btn-out { display: none !important; }
+  /* Push Start a Project button lower */
+  .hero-btns { margin-top: 32px !important; margin-bottom: 20px !important; }
+
+  /* Center Start a Project button in CTA banner */
+  .cta-banner { text-align: center !important; }
+  .cta-banner .btn-gold { display: inline-block !important; margin: 0 auto !important; }
+>
