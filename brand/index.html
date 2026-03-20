@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -819,7 +820,47 @@ footer a:hover{color:var(--gold)}
     grid-template-columns:1fr 1fr!important;
   }
 }
+
+/* Package desktop text wrap + left-align fix */
+.comm-pkg-grid > div {
+  min-width: 0 !important;
+  text-align: left !important;
+}
+.comm-pkg-grid > div [style*="display:flex;gap:10px"] {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+.comm-pkg-grid > div [style*="display:flex;gap:10px"] > span[style*="flex-shrink"] {
+  flex: 0 0 auto !important;
+}
+.comm-pkg-grid > div [style*="display:flex;gap:10px"] > strong,
+.comm-pkg-grid > div [style*="display:flex;gap:10px"] > span:not([style*="flex-shrink"]) {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  word-break: break-word !important;
+  text-align: left !important;
+}
+.comm-pkg-grid > div [style*="display:flex;flex-direction:column"] {
+  align-items: stretch !important;
+  text-align: left !important;
+  width: 100% !important;
+}
+@media (min-width: 769px) {
+  .comm-pkg-grid > div {
+    overflow: hidden !important;
+  }
+  .comm-pkg-grid > div [style*="display:flex;gap:10px"] {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+}
 </style>
+
+
 </head>
 <body>
 
@@ -922,10 +963,10 @@ footer a:hover{color:var(--gold)}
     <p style="font-size:15px;font-weight:300;color:rgba(240,237,232,0.65);line-height:1.85">Stop paying for one-off videos. Our production packages are built to give you a full library of broadcast-quality content in a single shoot day — so your brand stays active, consistent, and impossible to ignore for an entire quarter or year.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+  <div class="comm-pkg-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px" class="comm-pkg-grid">
 
     <!-- Package 1 -->
-    <div style="background:#1e2840;border:1px solid rgba(240,237,232,0.08);padding:48px 36px;position:relative;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.35)'" onmouseout="this.style.borderColor='rgba(240,237,232,0.08)'">
+    <div class="pkg-card-3" style="background:#1e2840;border:1px solid rgba(240,237,232,0.08);padding:48px 36px;position:relative;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.35)'" onmouseout="this.style.borderColor='rgba(240,237,232,0.08)'">
       <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px">Starter Package</div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#f0ede8;letter-spacing:0.03em;margin-bottom:8px">The Single</div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:#C9A84C;line-height:1;margin-bottom:4px"><sup style="font-size:32px;vertical-align:top;margin-top:14px">$</sup>15,000</div>
@@ -975,14 +1016,14 @@ footer a:hover{color:var(--gold)}
       <div style="font-size:12px;color:rgba(240,237,232,0.4);margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(240,237,232,0.1)">12 videos · 1–2 shoot days · content for the full year</div>
       <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:32px">
         <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Shoot in studio — professional white cyclorama wall</div>
-        <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>12 fully produced brand videos in studio across 1–2 shoot days</div>
+        <div style="display:flex;gap:10px;font-size:13px;font-weight:600;color:#C9A84C;line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>12 fully produced brand videos — 1–2 shoot days</div>
         
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>2+ actors included</div>
         
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>30 professional still photos</div>
-        <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Full pre-production for every concept</div>
+        <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Full pre-production on every concept</div>
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Talent, wardrobe, makeup, full crew</div>
-        <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>A full year of content — planned and produced upfront</div>
+        <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Full year of content — planned &amp; produced upfront</div>
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Seasonal campaigns — Q1 through Q4 covered</div>
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>All formats — TV, OTT, digital, paid social, organic</div>
         <div style="display:flex;gap:10px;font-size:13px;font-weight:300;color:rgba(240,237,232,0.7);line-height:1.5;align-items:flex-start"><span style="color:#C9A84C;font-size:6px;margin-top:5px;flex-shrink:0">◆</span>Priority scheduling and dedicated creative team</div>
@@ -1062,7 +1103,7 @@ footer a:hover{color:var(--gold)}
       <div class="sh" style="font-size:clamp(36px,5vw,72px);margin-bottom:20px">Tell us about<br>your <em>project.</em></div>
       <p class="sb" style="margin-bottom:32px">Whether you have a fully developed brief or just an idea on a napkin, we can help. Book a free 30-minute discovery call and we will tell you exactly how we would bring it to life.</p>
       <div class="ci"><div class="ci-l">Phone</div><div class="ci-v"><a href="tel:4138471293">413.847.1293</a></div></div>
-      <div class="ci"><div class="ci-l">Email</div><div class="ci-v"><a href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank"><span class="__cf_email__" data-cfemail="80b1b7e3f2e5e1f4e9f6e5e7f2eff5f0c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a></div></div>
+      <div class="ci"><div class="ci-l">Email</div><div class="ci-v"><a href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank"><span class="__cf_email__" data-cfemail="c8f9ffabbaada9bca1beadafbaa7bdb888afa5a9a1a4e6aba7a5">[email&#160;protected]</span></a></div></div>
       <div style="margin-top:28px;padding:24px;background:var(--navy2);border-left:2px solid var(--gold)">
         <p style="font-size:14px;font-weight:300;color:var(--w70);line-height:1.8;font-style:italic">"The same Emmy-winning team that built campaigns for the Bruins, Red Sox, and Barstool Sports is ready to build yours."</p>
       </div>
@@ -1200,4 +1241,37 @@ function submitForm(e){
 <!-- GEO SEO — hidden from visitors, crawlable by search engines -->
 <div style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;clip:rect(0,0,0,0)" aria-hidden="true" class="geo-seo-cities">
 <p>17 Creative Group serves clients throughout Massachusetts including Boston | Cambridge | Somerville | Brookline | Newton | Waltham | Watertown | Belmont | Arlington | Medford | Malden | Quincy | Braintree | Weymouth | Milton | Dedham | Needham | Wellesley | Natick | Framingham | Weston | Lexington | Concord | Lincoln | Sudbury | Wayland | Ashland | Holliston | Hopkinton | Milford | Medway | Millis | Dover | Sherborn | Medfield | Norwood | Canton | Stoughton | Sharon | Walpole | Westwood | Norwell | Hingham | Hull | Cohasset | Scituate | Marshfield | Duxbury | Plymouth | Randolph | Avon | Holbrook | Abington | Rockland | Hanover | Pembroke | Kingston | Lowell | Lawrence | Haverhill | Methuen | Andover | North Andover | Tewksbury | Billerica | Burlington | Woburn | Winchester | Stoneham | Wakefield | Reading | Wilmington | Chelmsford | Worcester | Shrewsbury | Northborough | Westborough | Grafton | Millbury | Auburn | Holden | Leominster | Fitchburg | Gardner | Greenfield | Northampton | Amherst | Holyoke | Chicopee | Springfield | Longmeadow | East Longmeadow | Wilbraham | Hampden | Palmer | Easthampton | Westfield | Agawam | West Springfield | Ludlow | Monson | Sturbridge | Oxford | Southbridge | Webster | Dudley | Uxbridge | Northbridge | Whitinsville | Attleboro | Taunton | Fall River | New Bedford | Cape Cod | Barnstable | Hyannis | Falmouth | Sandwich | Bourne | Wareham | Brockton | Bridgewater | Easton | Mansfield | Norton | Raynham | Middleborough | Lakeville | Marion | Dartmouth | Westport | Swansea | Somerset | Seekonk | Rehoboth | Peabody | Salem | Beverly | Gloucester | Rockport | Ipswich | Newburyport | Amesbury | Newbury | Rowley | Topsfield | Boxford | Georgetown | Groveland | Merrimac | West Newbury | Salisbury.</p>
-<p>We also serve the greater Austin Texas area including Austin | Round Rock | Cedar Park | Pflugerville | Georgetown | Leander | Kyle | Buda | San Marcos | New Braunfels | Hutto | Taylor | Liberty Hill | Marble Falls | Burnet | Bastrop | Elgin | Lockhart | Seguin | Schertz | Cibolo | Universal City | Converse | Live Oak | Selma | Garden Ridge | Boerne | Dripping Springs | Wimberley | Lakeway | Bee Cave | West Lake Hills | Rollingwood | Sunset Valley | Manor | Del Valle | Manchaca | Driftwood | Spicewood | Jonestown | Lago Vista | Volente | Brushy Creek | Wells Branch | Steiner Ranch | River Place | Anderson Mill | Jollyville | Mueller | East Austin | South Austin | North Austin | Domain | Barton Creek | Circle C Ranch | South Congress | Rainey Street | Zilker | Travis Heights | San Antonio | Kerrville | Fredericksburg | Johnson City | Blanco | Luling | Gonzales | Cuero | Victoria | Waco | Temple | Killeen | Harker Heights | Belton | Salado | Llano | Mason | Brady | Lampasas | Copperas Cove | Gatesville | Hillsboro | Corsicana | Waxahachie | Ennis | Midlothian | Mansfield | Arlington | Grand Prairie | Irving | Dallas | Fort Worth | Denton | McKinney | Frisco | Plano | Allen | Richar
+<p>We also serve the greater Austin Texas area including Austin | Round Rock | Cedar Park | Pflugerville | Georgetown | Leander | Kyle | Buda | San Marcos | New Braunfels | Hutto | Taylor | Liberty Hill | Marble Falls | Burnet | Bastrop | Elgin | Lockhart | Seguin | Schertz | Cibolo | Universal City | Converse | Live Oak | Selma | Garden Ridge | Boerne | Dripping Springs | Wimberley | Lakeway | Bee Cave | West Lake Hills | Rollingwood | Sunset Valley | Manor | Del Valle | Manchaca | Driftwood | Spicewood | Jonestown | Lago Vista | Volente | Brushy Creek | Wells Branch | Steiner Ranch | River Place | Anderson Mill | Jollyville | Mueller | East Austin | South Austin | North Austin | Domain | Barton Creek | Circle C Ranch | South Congress | Rainey Street | Zilker | Travis Heights | San Antonio | Kerrville | Fredericksburg | Johnson City | Blanco | Luling | Gonzales | Cuero | Victoria | Waco | Temple | Killeen | Harker Heights | Belton | Salado | Llano | Mason | Brady | Lampasas | Copperas Cove | Gatesville | Hillsboro | Corsicana | Waxahachie | Ennis | Midlothian | Mansfield | Arlington | Grand Prairie | Irving | Dallas | Fort Worth | Denton | McKinney | Frisco | Plano | Allen | Richardson.</p>
+<p>Emmy Award-winning video production, wedding videography, sports content, brand commercials, and digital marketing services available throughout New England and Texas.</p>
+</div>
+<style>
+@media(max-width:480px){
+  .nav{flex-direction:column!important;align-items:center!important;padding:16px!important;gap:12px!important}
+  .nav>a:first-child{display:flex!important;justify-content:center!important;width:100%!important}
+  .nav>a:first-child img{height:80px!important;width:auto!important}
+  .nav-links{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:6px!important;width:100%!important}
+  .nav-link{font-size:10px!important;padding:6px 10px!important;white-space:nowrap!important}
+  .hero{display:block!important;min-height:0!important;height:auto!important;overflow:visible!important}
+  .hero-photo{position:relative!important;height:75vh!important;min-height:400px!important;overflow:hidden!important}
+  .hero-photo img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}
+  .hero-overlay{position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(to top,rgba(26,33,49,0.95) 0%,rgba(26,33,49,0.3) 60%,transparent 100%)!important}
+  .hero-content{position:absolute!important;bottom:0!important;left:0!important;right:0!important;z-index:2!important;padding:0 20px 24px!important;text-align:center!important;box-sizing:border-box!important}
+  .hero-tag{font-size:9px!important;justify-content:center!important;margin-bottom:8px!important}
+  .hero-h{font-size:11vw!important;line-height:0.9!important;margin-bottom:10px!important}
+  .hero-sub{font-size:13px!important;margin-bottom:16px!important}
+  .hero-btns{flex-direction:column!important;align-items:center!important;gap:10px!important;margin-bottom:0!important}
+  .btn-gold,.btn-out{width:210px!important;text-align:center!important;display:block!important}
+  .hero-stats{position:relative!important;display:grid!important;grid-template-columns:1fr 1fr!important;border-top:none!important;padding-top:0!important;background:#1a2131!important}
+  .hst{padding:16px 10px!important;text-align:center!important;border-right:none!important;border-bottom:1px solid rgba(240,237,232,0.08)!important}
+  .hst-n{font-size:30px!important;display:block!important;text-align:center!important}
+  .hst-l{font-size:9px!important;display:block!important;text-align:center!important}
+  .carousel-thumbs{display:none!important}
+  .carousel-nav{display:none!important}
+  .section{padding:40px 20px!important}
+  body{overflow-x:hidden!important}
+  .comm-pkg-grid{grid-template-columns:1fr!important}
+  .comm-pkg-grid>div{padding:44px 24px 36px!important;box-sizing:border-box!important;width:100%!important;overflow:visible!important}
+}
+</style>
+</body>
+</html>
