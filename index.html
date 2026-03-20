@@ -1024,7 +1024,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Email</div>
-          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank">17creativegroup@gmail.com</a>
+          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank"><span class="__cf_email__" data-cfemail="26171145544347524f5043415449535666414b474f4a0845494b">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Portfolio</div>
@@ -1179,7 +1179,7 @@ a{text-decoration:none;color:inherit}
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
 window.addEventListener('scroll',()=>{
   const cue=document.getElementById('scrollCue');
@@ -1273,6 +1273,9 @@ function carouselPrev(name) {
 
 function carouselGo(name, index) {
   carousels[name].current = index;
+  // Mark as playing so updateCarousel uses autoplay=1
+  const iframe = document.getElementById(name + '-main');
+  if(iframe) iframe.dataset.playing = '1';
   updateCarousel(name);
 }
 
@@ -1393,13 +1396,4 @@ function submitForm(e) {
 if(window.innerWidth <= 480){
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
-      var src = el.getAttribute('src') || '';
-      if(src && src.indexOf('background=1') === -1){
-        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
-      }
-    });
-  });
-}
-</script>
-</body>
-</html>
+      var src = el.getAttribute('sr
