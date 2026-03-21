@@ -128,6 +128,9 @@ a{text-decoration:none;color:inherit}
 .carousel-thumb.active{opacity:1;border-color:#C9A84C}
 .carousel-thumb:hover{opacity:0.8}
 .carousel-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none}
+.carousel-thumb img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.thumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:rgba(255,255,255,0.8);pointer-events:none;text-shadow:0 1px 4px rgba(0,0,0,0.7)}
+.carousel-thumb.active .thumb-play{color:#C9A84C}
 
 /* CAP DIVIDER */
 .cap{margin:52px 0 0;padding:40px 44px;background:#1e2840;border-left:3px solid #C9A84C;position:relative;overflow:hidden}
@@ -177,7 +180,7 @@ a{text-decoration:none;color:inherit}
   .ps-grid{grid-template-columns:1fr;gap:44px}
   .cap{padding:28px 24px}
   .logo-item{padding:22px 28px}
-  .carousel-thumbs{display:none}
+  .carousel-thumbs{display:flex}
 }
 
 /* SKILLS SECTION */
@@ -442,10 +445,22 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
     <div class="carousel-thumbs" id="tv-thumbs">
-      <div class="carousel-thumb active" onclick="carouselGo('tv',0)"><iframe src="https://player.vimeo.com/video/1174409527?h=b9276f289c&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tv',1)"><iframe src="https://player.vimeo.com/video/1174409734?h=6f7f9583d6&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tv',2)"><iframe src="https://player.vimeo.com/video/1174409491?h=c067e8cae1&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tv',3)"><iframe src="https://player.vimeo.com/video/1174408402?h=ef3ffed862&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
+      <div class="carousel-thumb active" onclick="playVideo('tv-main','1174409527','b9276f289c',this)">
+        <img src="https://vumbnail.com/1174409527:b9276f289c.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tv-main','1174409734','6f7f9583d6',this)">
+        <img src="https://vumbnail.com/1174409734:6f7f9583d6.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tv-main','1174409491','c067e8cae1',this)">
+        <img src="https://vumbnail.com/1174409491:c067e8cae1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tv-main','1174408402','ef3ffed862',this)">
+        <img src="https://vumbnail.com/1174408402:ef3ffed862.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
     </div>
   </div>
   </div>
@@ -473,13 +488,34 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
     <div class="carousel-thumbs" id="tentpole-thumbs">
-      <div class="carousel-thumb active" onclick="carouselGo('tentpole',0)"><iframe src="https://player.vimeo.com/video/1174409187?h=0acaa94cd9&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',1)"><iframe src="https://player.vimeo.com/video/1174409154?h=ecc6a1d274&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',2)"><iframe src="https://player.vimeo.com/video/1174409471?h=966b3c4591&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',3)"><iframe src="https://player.vimeo.com/video/1174409171?h=a5ef8e8ad4&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',4)"><iframe src="https://player.vimeo.com/video/1174408864?h=ec62c403c8&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',5)"><iframe src="https://player.vimeo.com/video/1174409063?h=d63d1c564e&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('tentpole',6)"><iframe src="https://player.vimeo.com/video/1174409132?h=d995e29aad&autoplay=0&title=0&byline=0&portrait=0&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
+      <div class="carousel-thumb active" onclick="playVideo('tentpole-main','1174409187','0acaa94cd9',this)">
+        <img src="https://vumbnail.com/1174409187:0acaa94cd9.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174409154','ecc6a1d274',this)">
+        <img src="https://vumbnail.com/1174409154:ecc6a1d274.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174409471','966b3c4591',this)">
+        <img src="https://vumbnail.com/1174409471:966b3c4591.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174409171','a5ef8e8ad4',this)">
+        <img src="https://vumbnail.com/1174409171:a5ef8e8ad4.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174408864','ec62c403c8',this)">
+        <img src="https://vumbnail.com/1174408864:ec62c403c8.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174409063','d63d1c564e',this)">
+        <img src="https://vumbnail.com/1174409063:d63d1c564e.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('tentpole-main','1174409132','d995e29aad',this)">
+        <img src="https://vumbnail.com/1174409132:d995e29aad.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
     </div>
   </div>
   </div>
@@ -502,13 +538,34 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
     <div class="carousel-thumbs" id="social-thumbs">
-      <div class="carousel-thumb active" onclick="carouselGo('social',0)"><iframe src="https://player.vimeo.com/video/1174409638?h=40e3976638&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',1)"><iframe src="https://player.vimeo.com/video/1174409450?h=5937e2a258&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',2)"><iframe src="https://player.vimeo.com/video/1174409830?h=6285891166&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',3)"><iframe src="https://player.vimeo.com/video/1174409404?h=c3c9811663&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',4)"><iframe src="https://player.vimeo.com/video/1174409360?h=413092110e&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',5)"><iframe src="https://player.vimeo.com/video/1174409115?h=34b94442fd&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('social',6)"><iframe src="https://player.vimeo.com/video/1174409330?h=726eec942d&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
+      <div class="carousel-thumb active" onclick="playVideo('social-main','1174409638','40e3976638',this)">
+        <img src="https://vumbnail.com/1174409638:40e3976638.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409450','5937e2a258',this)">
+        <img src="https://vumbnail.com/1174409450:5937e2a258.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409830','6285891166',this)">
+        <img src="https://vumbnail.com/1174409830:6285891166.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409404','c3c9811663',this)">
+        <img src="https://vumbnail.com/1174409404:c3c9811663.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409360','413092110e',this)">
+        <img src="https://vumbnail.com/1174409360:413092110e.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409115','34b94442fd',this)">
+        <img src="https://vumbnail.com/1174409115:34b94442fd.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('social-main','1174409330','726eec942d',this)">
+        <img src="https://vumbnail.com/1174409330:726eec942d.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
     </div>
   </div>
   </div>
@@ -531,11 +588,26 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
     <div class="carousel-thumbs" id="sizzle-thumbs">
-      <div class="carousel-thumb active" onclick="carouselGo('sizzle',0)"><iframe src="https://player.vimeo.com/video/1174409504?h=115e61874f&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('sizzle',1)"><iframe src="https://player.vimeo.com/video/1174409242?h=50f7a0ebba&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('sizzle',2)"><iframe src="https://player.vimeo.com/video/1174409203?h=b8231addf7&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('sizzle',3)"><iframe src="https://player.vimeo.com/video/1174409600?h=afb0d46547&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
-      <div class="carousel-thumb" onclick="carouselGo('sizzle',4)"><iframe src="https://player.vimeo.com/video/1174408997?h=277125f92f&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen></iframe></div>
+      <div class="carousel-thumb active" onclick="playVideo('sizzle-main','1174409504','115e61874f',this)">
+        <img src="https://vumbnail.com/1174409504:115e61874f.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('sizzle-main','1174409242','50f7a0ebba',this)">
+        <img src="https://vumbnail.com/1174409242:50f7a0ebba.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('sizzle-main','1174409203','b8231addf7',this)">
+        <img src="https://vumbnail.com/1174409203:b8231addf7.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('sizzle-main','1174409600','afb0d46547',this)">
+        <img src="https://vumbnail.com/1174409600:afb0d46547.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
+      <div class="carousel-thumb" onclick="playVideo('sizzle-main','1174408997','277125f92f',this)">
+        <img src="https://vumbnail.com/1174408997:277125f92f.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div class="thumb-play">&#9654;</div>
+      </div>
     </div>
   </div>
   </div>
@@ -562,7 +634,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Email</div>
-          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank">17creativegroup@gmail.com</a>
+          <a class="contact-detail-value contact-link" href="https://mail.google.com/mail/?view=cm&to=17creativegroup@gmail.com" target="_blank"><span class="__cf_email__" data-cfemail="39080e5a4b5c584d504f5c5e4b564c49795e54585055175a5654">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail-item">
           <div class="contact-detail-label">Portfolio</div>
@@ -605,7 +677,7 @@ a{text-decoration:none;color:inherit}
 </section>
 
 
-<script src="https://player.vimeo.com/api/player.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function(){
   if(!window.IntersectionObserver) return;
@@ -653,14 +725,42 @@ a{text-decoration:none;color:inherit}
 // Mobile only: add background=1 to carousel thumbnails to hide Vimeo UI
 if(window.innerWidth <= 480){
   document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.carousel-thumb iframe, [onclick*="switchBiz"] iframe, [onclick*="carouselGo"] iframe').forEach(function(el){
+    document.querySelectorAll('.carousel-thumb iframe').forEach(function(el){
       var src = el.getAttribute('src') || '';
       if(src && src.indexOf('background=1') === -1){
-        el.setAttribute('src', src + (src.indexOf('?') !== -1 ? '&' : '?') + 'background=1');
+        el.setAttribute('src', src + '&background=1');
       }
     });
   });
 }
 </script>
-</body>
+
+<script>
+function playVideo(mainId, vidId, h, el) {
+  var src = h 
+    ? 'https://player.vimeo.com/video/'+vidId+'?h='+h+'&autoplay=1&loop=1&title=0&byline=0&portrait=0&color=C9A84C'
+    : 'https://player.vimeo.com/video/'+vidId+'?autoplay=1&loop=1&title=0&byline=0&portrait=0&color=C9A84C';
+  document.getElementById(mainId).src = src;
+  var thumbs = Array.from(el.parentElement.querySelectorAll('.carousel-thumb'));
+  thumbs.forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  // Update counter
+  var idx = thumbs.indexOf(el);
+  var name = mainId.replace('-main','');
+  var counter = document.getElementById(name+'-counter');
+  if(counter) counter.textContent = (idx+1) + ' / ' + thumbs.length;
+}
+
+function carouselNext(name) {
+  var thumbs = Array.from(document.querySelectorAll('#'+name+'-thumbs .carousel-thumb'));
+  var active = thumbs.findIndex(function(t){ return t.classList.contains('active'); });
+  thumbs[(active+1) % thumbs.length].click();
+}
+
+function carouselPrev(name) {
+  var thumbs = Array.from(document.querySelectorAll('#'+name+'-thumbs .carousel-thumb'));
+  var active = thumbs.findIndex(function(t){ return t.classList.contains('active'); });
+  thumbs[(active-1+thumbs.length) % thumbs.length].click();
+}
+</script>
 </html>
