@@ -347,10 +347,7 @@ a{text-decoration:none;color:inherit}
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap}
 .badge{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(201,168,76,0.45);border-radius:2px;font-size:12px;font-weight:500;color:#e4c97a;background:rgba(0,0,0,0.5);backdrop-filter:blur(6px)}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:#C9A84C}
-.scroll-cue{position:absolute;bottom:28px;right:64px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.5;transition:opacity 0.4s;animation:bcue 2s ease-in-out infinite}
-.scroll-cue span{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#f0ede8}
-.scroll-arrow{width:1px;height:32px;background:linear-gradient(to bottom,transparent,#f0ede8)}
-@keyframes bcue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
 
 /* STATS */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -796,10 +793,7 @@ a{text-decoration:none;color:inherit}
         
     </div>
   </div>
-  <div class="scroll-cue" id="scrollCue">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
-  </div>
+
 </div>
 
 <!-- STATS -->
@@ -1444,8 +1438,6 @@ a{text-decoration:none;color:inherit}
 <script>
 // Nav scroll
 window.addEventListener('scroll',()=>{
-  const cue=document.getElementById('scrollCue');
-  if(cue) cue.style.opacity=window.scrollY>100?'0':'0.5';
   const nav=document.getElementById('nav');
   if(nav){
     if(window.scrollY>80){nav.classList.add('scrolled');}
